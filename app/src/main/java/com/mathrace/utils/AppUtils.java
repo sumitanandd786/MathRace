@@ -1,4 +1,4 @@
-package com.mathrace.util;
+package com.mathrace.utils;
 
 import android.app.Activity;
 import android.content.Context;

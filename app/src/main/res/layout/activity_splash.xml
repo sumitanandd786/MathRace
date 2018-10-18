@@ -34,23 +34,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
+
+                android:layout_alignParentTop="true"
                 android:gravity="center|center_vertical"
                 android:text="@string/app_name"
                 android:textColor="@color/white"
                 android:textSize="@dimen/twentyfive_sp"
                 android:layout_alignParentLeft="true" />
 
-        <com.mathrace.customloader.BlinkingLoader
-            android:id="@+id/splash_loader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/splash_title"
-            app:auto_start="true"
-            app:dot_blinkingColor="@color/colorAccent"
-            app:dot_margin="@dimen/three_dp"
-            app:dot_neutralColor="@color/colorAccent_light"
-            app:dot_num_dots="5"/>
+            <com.mathrace.customloader.BlinkingLoader
+                android:id="@+id/splash_loader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/splash_title"
+                android:gravity="center|center_vertical"
+                app:auto_start="true"
+                app:dot_blinkingColor="@color/colorAccent"
+                app:dot_gravity="center|center_vertical"
+                app:dot_margin="@dimen/two_dp"
+                app:dot_animator_reverse="@animator/du_dot_animator"
+                app:dot_neutralColor="@color/colorAccent_light"
+                app:dot_num_dots="3" />
         </RelativeLayout>
     </FrameLayout>
 
