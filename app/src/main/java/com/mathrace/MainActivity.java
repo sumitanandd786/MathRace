@@ -17,7 +17,7 @@ import com.mathrace.utils.AppUtils;
 import com.mathrace.utils.BaseActivity;
 import com.mathrace.utils.Constants;
 
-public class MainActivity extends BaseActivity implements AddFragmentCallBack {
+public class MainActivity extends BaseActivity {//implements AddFragmentCallBack{
 
     private Activity activity;
     public static FrameLayout mFragmentContainer;
@@ -47,21 +47,21 @@ public class MainActivity extends BaseActivity implements AddFragmentCallBack {
 
 
 
-    @Override
-    public void changeFragment(Fragment targetFragment, boolean addToBackStack, String transactionName, String tag) {
-        try {
-            if (AppUtils.isActivityAvailable(activity)) {
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentFrame, targetFragment, tag);
-                if (addToBackStack)
-                    fragmentTransaction.addToBackStack(transactionName);
-                fragmentTransaction.commit();
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    @Override
+//    public void changeFragment(Fragment targetFragment, boolean addToBackStack, String transactionName, String tag) {
+//        try {
+//            if (AppUtils.isActivityAvailable(activity)) {
+//                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.fragmentFrame, targetFragment, tag);
+//                if (addToBackStack)
+//                    fragmentTransaction.addToBackStack(transactionName);
+//                fragmentTransaction.commit();
+//
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 
     @Override

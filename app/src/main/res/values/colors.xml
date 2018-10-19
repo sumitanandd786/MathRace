@@ -23,5 +23,7 @@
     <color name="AppleGreen">#78be20</color>
     <color name="light_AppleGreen">#3378be20</color>
     <color name="color_primary_light">#8b96d2</color>
+    <color name="blue">#3F51B5</color>
+    <color name="light_grey">#DEDEDE</color>
 
 </resources>

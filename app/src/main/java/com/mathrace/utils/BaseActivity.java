@@ -9,6 +9,8 @@ import android.net.Uri;
 import android.provider.Settings;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,6 +18,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.mathrace.R;
+import com.mathrace.interfaces.AddFragmentCallBack;
+import com.mathrace.setting.SettingFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +28,7 @@ import java.util.List;
  * Created by Administrator on 2/7/2017.
  */
 
-public class BaseActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
+public class BaseActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback, AddFragmentCallBack {
 
     protected int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 20;
     protected int MY_PERMISSION_REQUEST_WRITE_CONTACTS = 30;
@@ -125,6 +129,16 @@ public class BaseActivity extends AppCompatActivity implements ActivityCompat.On
             case R.id.appPermissions:
                 startAppPermissions();
                 break;
+            case R.id.appSettings:
+//                Fragment fragment = getSupportFragmentManager().findFragmentByTag(SettingFragment.class.getSimpleName());
+
+                SettingFragment settingFragment = (SettingFragment) getSupportFragmentManager().findFragmentByTag(SettingFragment.class.getSimpleName());
+                if (settingFragment == null || !settingFragment.isVisible()) {
+                    settingFragment = new SettingFragment();
+                }
+                String transactionName = settingFragment.getClass().getSimpleName();
+                changeFragment(settingFragment, !settingFragment.isVisible(), transactionName, transactionName);
+                break;
             default:
                 break;
         }
@@ -138,4 +152,19 @@ public class BaseActivity extends AppCompatActivity implements ActivityCompat.On
         startActivity(intent);
     }
 
+    @Override
+    public void changeFragment(Fragment fragment, boolean addToBackStack, String transactionName, String tag) {
+        try {
+            if (AppUtils.isActivityAvailable(BaseActivity.this)) {
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentFrame, fragment, tag);
+                if (addToBackStack)
+                    fragmentTransaction.addToBackStack(transactionName);
+                fragmentTransaction.commit();
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

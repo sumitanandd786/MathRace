@@ -6,4 +6,8 @@
     <item android:id="@+id/appPermissions"
         android:title="Permissions"/>
 
+
+    <item android:id="@+id/appSettings"
+        android:title="Settings"/>
+
 </menu>
