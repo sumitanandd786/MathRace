@@ -15,8 +15,6 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        /*val i = Intent(this@SplashActivity, MainActivity::class.java)
-        startActivity(i)*/
         Handler().postDelayed(Runnable /*
              * Showing splash screen with a timer. This will be useful when you
              * want to show case your app logo / company

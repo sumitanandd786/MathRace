@@ -25,5 +25,7 @@
     <color name="color_primary_light">#8b96d2</color>
     <color name="blue">#3F51B5</color>
     <color name="light_grey">#DEDEDE</color>
+    <color name="primary_text">#212121</color>
+    <color name="primary_color">#2196f3</color>
 
 </resources>

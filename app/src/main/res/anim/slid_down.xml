@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--Down animation-->
+   <!-- <translate
+        android:duration="1000"
+        android:fromYDelta="0"
+        android:toYDelta="100%" />-->
+
+    <!--Up animation-->
+    <translate
+        android:duration="1000"
+        android:fromYDelta="100%"
+        android:toYDelta="0" />
+   <!-- <translate
+        android:duration="1500"
+        android:fromYDelta="90%"
+        android:toYDelta="0" />-->
+
+</set>
