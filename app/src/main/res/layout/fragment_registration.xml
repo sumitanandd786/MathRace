@@ -43,7 +43,9 @@
             android:text="Cancel"
             android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_toLeftOf="@+id/register"
+            android:layout_marginRight="@dimen/twenty_dp" />
 
         <TextView
             android:id="@+id/register"
@@ -53,7 +55,8 @@
             android:text="Register"
             android:textAllCaps="true"
             android:textColor="@color/blue"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_alignParentRight="true" />
     </RelativeLayout>
 
 
