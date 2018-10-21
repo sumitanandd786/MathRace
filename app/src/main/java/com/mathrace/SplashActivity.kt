@@ -5,7 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.os.HandlerCompat.postDelayed
-
+import android.view.Window
+import android.view.WindowManager
 
 
 class SplashActivity : AppCompatActivity() {
@@ -14,7 +15,12 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_splash)
+
         Handler().postDelayed(Runnable /*
              * Showing splash screen with a timer. This will be useful when you
              * want to show case your app logo / company

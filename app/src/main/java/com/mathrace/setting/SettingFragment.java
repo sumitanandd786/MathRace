@@ -2,6 +2,7 @@ package com.mathrace.setting;
 
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,7 @@ import butterknife.OnClick;
 
 
 public class SettingFragment extends BaseFragment {
-    //    @BindView(R.id.onSpotRegistration)
-    Button onSpotRegistration;
+    Button onSpotRegistration, adjustStartTimer;
 
 
     public SettingFragment() {
@@ -30,23 +30,55 @@ public class SettingFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_setting, container, false);
-        ButterKnife.bind( this, view);
-        onSpotRegistration = (Button) view.findViewById(R.id.onSpotRegistration);
+        init(view);
+        return view;
+    }
+
+    private void init(View view) {
+        onSpotRegistration = view.findViewById(R.id.onSpotRegistration);
+        adjustStartTimer = view.findViewById(R.id.adjustStartTimer);
         onSpotRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onSpotRegistrationInvoke();
             }
         });
-        return view;
+        adjustStartTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adjustStartTimerInvoke();
+            }
+        });
+
+
     }
 
 
-//    @OnClick(R.id.onSpotRegistration)
     public void onSpotRegistrationInvoke() {
         RegistrationFragment registrationFragment = new RegistrationFragment();
         String transactionName = registrationFragment.getClass().getSimpleName();
         changeFragment(registrationFragment, true, transactionName, transactionName);
+    }
+
+    public void adjustStartTimerInvoke() {
+        TimePickerDialog timePickerDialog = (TimePickerDialog) getActivity().getSupportFragmentManager().findFragmentByTag(TimePickerDialog.class.getSimpleName());
+        if (timePickerDialog == null || !timePickerDialog.isVisible()) {
+            timePickerDialog = new TimePickerDialog();
+        }
+        String transactionName = timePickerDialog.getClass().getSimpleName();
+        changeFragment(timePickerDialog, true, transactionName, transactionName);
+
+        timePickerDialog.sendData = new TimePickerDialog.SendData()
+
+        {
+            @Override
+            public void sendData(String s) {
+//                tv_answer2.setText(s);
+//                timePickerDialog.closeFragment();
+            }
+        }
+
+        ;
     }
 
 }
