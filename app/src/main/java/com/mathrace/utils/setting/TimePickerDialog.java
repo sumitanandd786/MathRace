@@ -1,4 +1,4 @@
-package com.mathrace.setting;
+package com.mathrace.utils.setting;
 
 import android.app.Activity;
 import android.os.Bundle;

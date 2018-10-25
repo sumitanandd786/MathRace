@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-package com.mathrace.setting;
+package com.mathrace.utils.setting;
 
 import android.content.Context;
 import android.database.DataSetObserver;

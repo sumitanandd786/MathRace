@@ -13,7 +13,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <com.mathrace.setting.WheelVerticalView
+        <com.mathrace.utils.setting.WheelVerticalView
             android:id="@+id/hour"
             android:layout_width="50dp"
             android:layout_height="wrap_content" />
@@ -27,7 +27,7 @@
             android:textSize="@dimen/twentyfive_dp" />
 
 
-        <com.mathrace.setting.WheelVerticalView
+        <com.mathrace.utils.setting.WheelVerticalView
             android:id="@+id/mins"
             android:layout_width="50dp"
             android:layout_height="wrap_content" />
@@ -41,7 +41,7 @@
             android:textSize="@dimen/twentyfive_dp" />
 
 
-        <com.mathrace.setting.WheelVerticalView
+        <com.mathrace.utils.setting.WheelVerticalView
             android:id="@+id/seconds"
             android:layout_width="50dp"
             android:layout_height="wrap_content" />

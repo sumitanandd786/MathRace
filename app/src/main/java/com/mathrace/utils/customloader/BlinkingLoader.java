@@ -1,4 +1,4 @@
-package com.mathrace.customloader;
+package com.mathrace.utils.customloader;
 
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 

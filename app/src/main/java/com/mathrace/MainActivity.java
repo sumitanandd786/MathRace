@@ -2,18 +2,11 @@ package com.mathrace;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.mathrace.fragment.DashboardFragment;
-import com.mathrace.interfaces.AddFragmentCallBack;
-import com.mathrace.setting.SettingFragment;
-import com.mathrace.utils.AppUtils;
 import com.mathrace.utils.BaseActivity;
 import com.mathrace.utils.Constants;
 

@@ -1,4 +1,4 @@
-package com.mathrace.customloader;
+package com.mathrace.utils.customloader;
 
 import android.content.Context;
 import android.content.res.TypedArray;

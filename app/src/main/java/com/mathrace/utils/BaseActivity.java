@@ -19,7 +19,7 @@ import android.view.View;
 
 import com.mathrace.R;
 import com.mathrace.interfaces.AddFragmentCallBack;
-import com.mathrace.setting.SettingFragment;
+import com.mathrace.fragment.SettingFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -119,12 +119,13 @@ public class BaseActivity extends AppCompatActivity implements ActivityCompat.On
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
+        MenuItem item = menu.findItem(R.id.appPermissions);
+        item.setVisible(false);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
             case R.id.appPermissions:
                 startAppPermissions();

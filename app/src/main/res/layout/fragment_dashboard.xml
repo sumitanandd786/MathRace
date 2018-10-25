@@ -14,7 +14,7 @@
         android:weightSum="1">
 
         <Button
-            android:id="@+id/dashboard_start_btn"
+            android:id="@+id/dashboard_start_stop_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/five_dp"
@@ -23,28 +23,14 @@
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/dashboard_stop_btn"
+            android:id="@+id/dashboard_reset_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/five_dp"
-            android:background="@color/TomatoRed"
-            android:text="@string/stop_btn_txt"
+            android:background="@color/AppleGreen"
+            android:text="@string/reset_btn_txt"
             android:textColor="@color/white" />
 
-
-        <ImageView
-            android:id="@+id/dashboard_left_list_btn"
-            android:layout_width="@dimen/twenty_dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            app:srcCompat="@drawable/ic_previous" />
-
-        <ImageView
-            android:id="@+id/dashboard_right_list_btn"
-            android:layout_width="@dimen/twenty_dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical"
-            app:srcCompat="@drawable/ic_next" />
 
 
     </LinearLayout>
@@ -62,29 +48,37 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/five_dp"
             android:layout_weight="0.5"
+            android:padding="@dimen/five_dp"
+            android:format24Hour="hh:mm:ss aa"
             android:background="@color/black"
-            android:format12Hour="hh:mm:ss a"
             android:gravity="center_horizontal"
             android:textColor="@color/TomatoRed"
-            android:textSize="@dimen/twenty_sp"
+            android:textSize="@dimen/twentyfive_sp"
             android:textStyle="bold"
             tools:targetApi="jelly_bean_mr1" />
 
-        <TextView
-            android:id="@+id/dashboard_stopwatch_tv"
+        <com.mathrace.utils.Chronometer
+            android:id="@+id/dashboard_stopwatch_chrono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/five_dp"
             android:layout_weight="0.5"
+            android:padding="@dimen/five_dp"
             android:background="@color/black"
             android:gravity="center|center_vertical"
             android:text="@string/alaram_text"
             android:textColor="@color/white"
-            android:textSize="@dimen/twenty_sp"
+            android:textSize="@dimen/twentyfive_sp"
             android:textStyle="bold" />
 
 
     </LinearLayout>
+
+<com.mathrace.utils.emotionrating.SmileRating
+    android:id="@+id/ratingView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:isIndicator="false"/>
 
 
 </LinearLayout>

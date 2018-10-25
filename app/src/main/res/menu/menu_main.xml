@@ -7,6 +7,8 @@
         android:title="Permissions"/>
 
     <item android:id="@+id/appSettings"
-        android:title="Settings"/>
+        android:title="Settings"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_setting_img"/>
 
 </menu>

@@ -22,20 +22,21 @@
  * limitations under the License.
  */
 
-package com.mathrace.setting;
+package com.mathrace.utils.setting;
 
 /**
- * Wheel changed listener interface.
- * <p>The onChanged() method is called whenever current spinnerwheel positions is changed:
- * <li> New Wheel position is set
- * <li> Wheel view is scrolled
+ * Wheel scrolled listener interface.
  */
-public interface OnWheelChangedListener {
+public interface OnWheelScrollListener {
 	/**
-	 * Callback method to be invoked when current item changed
-	 * @param wheel the spinnerwheel view whose state has changed
-	 * @param oldValue the old value of current item
-	 * @param newValue the new value of current item
+	 * Callback method to be invoked when scrolling started.
+	 * @param wheel the spinnerwheel view whose state has changed.
 	 */
-	void onChanged(AbstractWheel wheel, int oldValue, int newValue);
+	void onScrollingStarted(AbstractWheel wheel);
+	
+	/**
+	 * Callback method to be invoked when scrolling ended.
+	 * @param wheel the spinnerwheel view whose state has changed.
+	 */
+	void onScrollingFinished(AbstractWheel wheel);
 }

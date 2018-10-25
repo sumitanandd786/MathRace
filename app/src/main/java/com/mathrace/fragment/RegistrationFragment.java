@@ -1,4 +1,4 @@
-package com.mathrace.setting;
+package com.mathrace.fragment;
 
 
 import android.os.Bundle;

@@ -42,7 +42,7 @@
                 android:textSize="@dimen/twentyfive_sp"
                 android:layout_alignParentLeft="true" />
 
-            <com.mathrace.customloader.BlinkingLoader
+            <com.mathrace.utils.customloader.BlinkingLoader
                 android:id="@+id/splash_loader"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/thirty_dp"
